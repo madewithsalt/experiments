@@ -2,7 +2,7 @@
 // First, define your grid.
 //------------------------
 // 1. The width of your container.
-$totalWidth: 960px !default
+$totalWidth: 900px !default
 // 2. The size of your gutters:
 $gutterWidth: 10px !default
 // 3. The side which you prefer your gutters to be assigned: left or right.
@@ -11,7 +11,6 @@ $gutterDir: left !default
 $columns: 12 !default
 
 // MIXINS/FUNCTIONS //
-
 
 // Modular Scale & Golden Ratio //
 // credit for modular-scale and golden-ratio goes to the fabulous bourbon library.
@@ -60,7 +59,7 @@ $columns: 12 !default
 
 // Column Generator //
 // Defines the width of a block based on the number of columns passed.
-// if $gutter is passes as false, it will skip the gutter asignment
+// if $gutter is passed as false, it will skip the gutter asignment
 // if $gutterDir is passed, it over-rides the default.
 =columns($colNum, $gutterDir: $gutterDir, $gutter: true)
   @if $gutter == true
@@ -69,8 +68,9 @@ $columns: 12 !default
   width: $colNum * ($totalWidth/$columns) - $gutterWidth
 
 // simply returns the width of column, no gutters.
-@function column($colNum)
+@function columns($colNum)
   @return $colNum * ($totalWidth/$columns)
+
 
 // UTILITIES //
 // the famous clearfix, cleaned up a bit.

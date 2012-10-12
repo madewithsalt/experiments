@@ -1,6 +1,7 @@
 // Framework //
 
-$gutterWidth: 5px
+$gutterWidth: 8px
+$grey: rgba(0, 0, 0, .20)
 
 body
   font-family: $sansSerif
@@ -10,28 +11,32 @@ body
   width: $totalWidth
   +clear
 
-.block
-  min-height: 300px
-  background: #cfcfcf
-  float: left
-  +columns(2)
-  &:last-child
-    +columns(4)
+// example of using the semantic grid in a class-based way, like any other grid system. 
 
-  .block
-    background: lighten(#cfcfcf, 10)
-    width: column(1) - $gutterWidth
-    &:first-child
-      margin-left: 0
+[class*="block_"]
+  min-height: 300px
+  background: $grey
+  float: left
+
+[class*="block_"] > [class*="block_"]
+  background: $grey
+
+  &:first-child
+    margin-#{$gutterDir}: 0
+
+@for $i from 1 through $columns 
+  .block_#{$i} 
+    +columns($i)
+
 
 .golden
   min-height: 300px
   background: #999
   float: left
   &:nth-child(odd)
-    +golden-ratio(column(6), "lesser")
+    +golden-ratio(columns(6), "lesser")
   &:nth-child(even)
-    +golden-ratio(column(6), "greater")
+    +golden-ratio(columns(6), "greater")
   .golden-vert
     width: 100%
     background: lighten(#999, 10)
@@ -45,9 +50,9 @@ body
   background: lighten(#999, 20)
   float: left
   &:first-child
-    width: golden-ratio(golden-ratio(column(6), "lesser"), "lesser") - $gutterWidth
+    width: golden-ratio(golden-ratio(columns(6), "lesser"), "lesser") - $gutterWidth
   &:last-child
-    width: golden-ratio(golden-ratio(column(6), "lesser"), "greater") - $gutterWidth
+    width: golden-ratio(golden-ratio(columns(6), "lesser"), "greater") - $gutterWidth
     margin-left: $gutterWidth
 
   .golden-vert

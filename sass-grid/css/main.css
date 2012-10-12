@@ -3,7 +3,7 @@ body {
 
 .container {
   border: 1px solid black;
-  width: 960px;
+  width: 900px;
   *zoom: 1; }
   .container:before, .container:after {
     content: " ";
@@ -12,37 +12,80 @@ body {
   .container:after {
     clear: both; }
 
-.block {
+[class*="block_"] {
   min-height: 300px;
-  background: #cfcfcf;
-  float: left;
-  margin-left: 5px;
-  width: 155px; }
-  .block:last-child {
-    margin-left: 5px;
-    width: 315px; }
-  .block .block {
-    background: #e9e9e9;
-    width: 75px; }
-    .block .block:first-child {
-      margin-left: 0; }
+  background: rgba(0, 0, 0, 0.2);
+  float: left; }
+
+[class*="block_"] > [class*="block_"] {
+  background: rgba(0, 0, 0, 0.2); }
+  [class*="block_"] > [class*="block_"]:first-child {
+    margin-left: 0; }
+
+.block_1 {
+  margin-left: 8px;
+  width: 67px; }
+
+.block_2 {
+  margin-left: 8px;
+  width: 142px; }
+
+.block_3 {
+  margin-left: 8px;
+  width: 217px; }
+
+.block_4 {
+  margin-left: 8px;
+  width: 292px; }
+
+.block_5 {
+  margin-left: 8px;
+  width: 367px; }
+
+.block_6 {
+  margin-left: 8px;
+  width: 442px; }
+
+.block_7 {
+  margin-left: 8px;
+  width: 517px; }
+
+.block_8 {
+  margin-left: 8px;
+  width: 592px; }
+
+.block_9 {
+  margin-left: 8px;
+  width: 667px; }
+
+.block_10 {
+  margin-left: 8px;
+  width: 742px; }
+
+.block_11 {
+  margin-left: 8px;
+  width: 817px; }
+
+.block_12 {
+  margin-left: 8px;
+  width: 892px; }
 
 .golden {
   min-height: 300px;
   background: #999999;
   float: left; }
   .golden:nth-child(odd) {
-    margin-left: 5px;
-    width: 178.35139px; }
+    margin-left: 8px;
+    width: 163.89193px; }
   .golden:nth-child(even) {
-    margin-left: 5px;
-    width: 291.66255px; }
+    margin-left: 8px;
+    width: 270.12114px; }
   .golden .golden-vert {
     width: 100%;
     background: #b3b3b3; }
     .golden .golden-vert:first-child {
-      margin-bottom: 5px;
-      height: 109.59462px; }
+      margin-bottom: 8px;
+      height: 106.59462px; }
     .golden .golden-vert:last-child {
       height: 185.41409px; }
 
@@ -51,14 +94,14 @@ body {
   background: #cccccc;
   float: left; }
   .golden-inner:first-child {
-    width: 65.03694px; }
+    width: 57.65963px; }
   .golden-inner:last-child {
-    width: 108.31977px;
-    margin-left: 5px; }
+    width: 98.23728px;
+    margin-left: 8px; }
   .golden-inner .golden-vert {
     width: 100%;
     background: #e6e6e6; }
     .golden-inner .golden-vert:first-child {
       height: 70.82486px; }
     .golden-inner .golden-vert:last-child {
-      height: 109.59462px; }
+      height: 106.59462px; }
