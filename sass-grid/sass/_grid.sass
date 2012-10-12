@@ -69,7 +69,7 @@ $columns: 12 !default
   width: $colNum * ($totalWidth/$columns) - $gutterWidth
 
 // simply returns the width of column, no gutters.
-@function colWidth($colNum)
+@function column($colNum)
   @return $colNum * ($totalWidth/$columns)
 
 // UTILITIES //
@@ -81,9 +81,9 @@ $columns: 12 !default
   &:before, &:after
     content: " "
     display: table
+    visibility: hidden
   &:after
     clear: both
-    visibility: hidden
 
 
 

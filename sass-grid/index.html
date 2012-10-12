@@ -6,14 +6,20 @@
 </head>
 <body>
   <h1> Exploration in a better kind of grid.</h1>
-
+  <p><b>Goal:</b> To create a semantic, flexible grid that also supports the golden ratio and modular scale.</p>
+  <p>Grid definition in the markup is optional - the formulae are both mixins and functions that calculate widths and margins based on pre-defined variables, so you can add them to any element, or define a class that you apply to your elements to make a more traditional grid.</p>
+  <p><i>Inspired by Semantic.gs and Bourbon, along with my distaste for html bloat in frameworks like bootstrap and 960.</i></p>
   <div class="container">
-    <div class="block"></div>
+    <div class="block">
+      <div class="block"></div>
+      <div class="block"></div>
+    </div>
     <div class="block"></div>
     <div class="block"></div>
     <div class="block"></div>
     <div class="block"></div>
   </div>
+  <h2>Golden Ratio Experimentation:</h2>
   <div class="container">
     <div class="golden">
       <div class="golden-vert"></div>
