@@ -1,0 +1,55 @@
+// Framework //
+
+body
+  font-family: $sansSerif
+
+.container
+  border: 1px solid red
+  width: $totalWidth
+  +clear
+
+.block
+  min-height: 300px
+  background: #cfcfcf
+  float: left
+  +columns(2)
+  &:last-child
+    +columns(4)
+
+.golden
+  min-height: 300px
+  background: #999
+  float: left
+  &:nth-child(odd)
+    +golden-ratio(colWidth(6), "lesser")
+  &:nth-child(even)
+    +golden-ratio(colWidth(6), "greater")
+  .golden-vert
+    width: 100%
+    background: lighten(#999, 10)
+    &:first-child
+      +golden-ratio(300px, "lesser", $gutterDir: bottom, $dir: height)
+    &:last-child
+      +golden-ratio(300px, "greater", $gutter: false, $dir: height)
+
+.golden-inner
+  height: 100%
+  background: lighten(#999, 20)
+  float: left
+  &:first-child
+    width: golden-ratio(golden-ratio(colWidth(6), "lesser"), "lesser") - $gutterWidth
+  &:last-child
+    width: golden-ratio(golden-ratio(colWidth(6), "lesser"), "greater") - $gutterWidth
+    margin-left: $gutterWidth
+
+  .golden-vert
+    width: 100%
+    background: lighten(#999, 30)
+    &:first-child
+      height: golden-ratio(golden-ratio(300px, "greater"), "lesser")
+    &:last-child
+      height: golden-ratio(golden-ratio(300px, "greater"), "greater") - $gutterWidth
+
+
+
+
