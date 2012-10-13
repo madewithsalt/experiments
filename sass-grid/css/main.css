@@ -1,9 +1,13 @@
 body {
-  font-family: Helvetica, Arial, sans-serif; }
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 18px; }
 
 .container {
   border: 1px solid black;
   width: 900px;
+  margin-bottom: 18px;
   *zoom: 1; }
   .container:before, .container:after {
     content: " ";
