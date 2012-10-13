@@ -72,7 +72,7 @@ body {
 
 .golden {
   min-height: 300px;
-  background: #999999;
+  background: rgba(0, 0, 0, 0.2);
   float: left; }
   .golden:nth-child(odd) {
     margin-left: 8px;
@@ -80,18 +80,19 @@ body {
   .golden:nth-child(even) {
     margin-left: 8px;
     width: 270.12114px; }
-  .golden .golden-vert {
-    width: 100%;
-    background: #b3b3b3; }
-    .golden .golden-vert:first-child {
-      margin-bottom: 8px;
-      height: 106.59462px; }
-    .golden .golden-vert:last-child {
-      height: 185.41409px; }
+
+.golden-vert {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2); }
+  .golden-vert:first-child {
+    margin-bottom: 8px;
+    height: 106.59462px; }
+  .golden-vert:last-child {
+    height: 185.41409px; }
 
 .golden-inner {
   height: 100%;
-  background: #cccccc;
+  background: rgba(0, 0, 0, 0.2);
   float: left; }
   .golden-inner:first-child {
     width: 57.65963px; }
@@ -100,7 +101,7 @@ body {
     margin-left: 8px; }
   .golden-inner .golden-vert {
     width: 100%;
-    background: #e6e6e6; }
+    background: rgba(0, 0, 0, 0.2); }
     .golden-inner .golden-vert:first-child {
       height: 70.82486px; }
     .golden-inner .golden-vert:last-child {
