@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="styles/main.css">
+
+        <script src="scripts/lib/modernizr.min.js"></script>
+    </head>
+    <body>
+    <div class="container">
+
+        <div class="piano-entry">
+            <input class="piano-input" placeholder="Type keys here and then hit enter. Ex: A, C, D" />
+        </div>
+    </div>
+    <div class="footer">
+        <h5 class="snark">"I can now tell my Grama those piano lessons weren't a total waste! :) "</h5>
+        <a class="small" href="docs/main.html">Annotated source all prettified</a>
+    </div>
+        <script src="scripts/lib/jquery.min.js"></script>
+        <script src="scripts/lib/handlebars.js"></script>
+
+        <!-- where zee magic happenz! -->
+        <script src="scripts/main.js"></script>
+
+        <script type="text/x-handlebars-template" id="piano-template">
+            <div class="piano-keyboard">
+                <div class="key key-white" data-note="C"><span>C</span></div>
+                <div class="key key-black" data-note="C#"><span>C#</span></div>
+                <div class="key key-white" data-note="D"><span>D</span></div>
+                <div class="key key-black" data-note="D#"><span>D#</span></div>
+                <div class="key key-white" data-note="E"><span>E</span></div>
+                <div class="key key-white" data-note="F"><span>F</span></div>
+                <div class="key key-black" data-note="F#"><span>F#</span></div>
+                <div class="key key-white" data-note="G"><span>G</span></div>
+                <div class="key key-black" data-note="G#"><span>G#</span></div>
+                <div class="key key-white" data-note="A"><span>A</span></div>
+                <div class="key key-black" data-note="A#"><span>A#</span></div>
+                <div class="key key-white" data-note="B"><span>B</span></div>
+            </div>
+        </script>
+
+
+    </body>
+</html>
