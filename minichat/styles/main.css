@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  color: #999999;
+}
+
+.chat-container {
+  position: absolute;
+  z-index: 15000; /* huge number to ensure top of pile */
+  bottom: 0;
+  right: 10px;
+  border: 1px solid #999999;
+  font-size: 12px;
+  min-width: 200px;
+}
+
+.sprc-header {
+  background: #000000;
+  color: #ffffff;
+  text-align: left;
+  padding: 4px 6px;
+  margin-bottom: 4px;
+}
+
+.sprc-header .online {
+  background-color: green;
+  border-radius: 10px;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.sprc-header .close {
+  float: right;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.sprc-chatblock {
+  overflow-x: auto;
+  max-height: 200px;
+}
+
+.sprc-chat {
+  background-color: #eeeeee;
+  border-top: 1px solid #cccccc;
+  padding: 6px 4px 2px;
+  overflow: hidden;
+}
+
+.sprc-chat .chat-time {
+  display: block;
+  font-size: 11px;
+  color: #5c5b5b;
+  text-align: right;
+  margin-top: 9px;
+}
+
+.sprc-chat .chat-avatar {
+  float: left;
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+  margin-right: 4px;
+}
+
+.chat-avatar img {
+  overflow: hidden;
+  width: 100%;
+}
+
+.sprc-input input {
+  display: inline-block;
+  width: -webkit-calc(100% - 14px);
+  width: -calc(100% - 14px);
+  margin-left: 4px;
+  min-height: 16px;
+
+}

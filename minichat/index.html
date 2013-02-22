@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+    <div class="container">
+        <h1>Mini Chat Experiment</h1>
+        <p>This is a mini-experiment of assembling the UI for a
+            jQuery-powered chat app.</p>
+        <p>Try typing things into the text input and press 'enter'.</p>
+        <p>Enjoy your conversation with yourself! :D</p>
+
+    </div>
+        <script src="scripts/lib/jquery.min.js"></script>
+        <script src="scripts/lib/handlebars.js"></script>
+        <script src="scripts/lib/Date.min.js"></script>
+
+        <!-- where zee magic happenz! -->
+        <script src="scripts/chat.js"></script>
+
+        <script type="text/x-handlebars-template" id="chat-template">
+        <div class="sprc-chat">
+            <div class="chat-avatar"><img src="{{avatar}}" /></div>
+            <span class="chat-text">{{chattext}}</span>
+            <span class="chat-time">{{chattime}}</span>
+        </div>
+        </script>
+        <script type="text/x-handlebars-template" id="chatbox-template">
+            <div class="chat-container">
+            <div class="sprc-header">
+                <span class="online"></span>
+                <span class="user">{{header}}</span>
+                <a class="close" href="#">x</a>
+            </div>
+            <div class="sprc-chatblock">
+              <!-- dynamically added chats here. -->
+            </div>
+            <div class="sprc-input">
+              <input name="chat-input" value="" />
+            </div>
+            </div>
+        </script>
+
+    </body>
+</html>
