@@ -1,0 +1,96 @@
+/* Web page prettification */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.inline {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Begin Scrollbars Code */
+/* Available psuedos:
+::-webkit-scrollbar
+::-webkit-scrollbar-button
+::-webkit-scrollbar-track
+::-webkit-scrollbar-track-piece
+::-webkit-scrollbar-thumb
+::-webkit-scrollbar-corner
+::-webkit-resizer
+
+Available states:
+:horizontal
+:vertical
+:decrement
+:increment
+:start
+:end
+:double-button
+:single-button
+:no-button
+:corner-present
+:window-inactive
+
+*/
+
+.scroll {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin-right:  10px;
+  padding: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.scroll.one {
+  max-height: 300px;
+  width: 500px;
+  overflow-y: scroll;
+}
+
+.scroll.two {
+  max-height: 300px;
+  width: 150px;
+}
+
+/*
+  To prevent shifting of elements or
+  accidental hiding of text when the scroll
+  is shown, the contents must be wrapped in an
+  element that can posess a margin.
+*/
+.scroll.two > div {
+  margin-right: 10px;
+}
+
+.scroll.two:hover {
+  overflow-y: scroll;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll::-webkit-scrollbar-track:hover {
+  background: transparent;
+  border: 1 solid rgba(0, 0, 0, 0.2);
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.scroll:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+

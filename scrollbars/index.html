@@ -1,0 +1,107 @@
+<html>
+<head>
+  <title>jQuery.googScroll.js demo</title>
+  <link rel="stylesheet" type="text/css" href="css/scrollbars.css">
+</head>
+<body>
+  <div class="intro">
+    <h1>Fun With Scrollbars</h1>
+    <p>I wanted to understand how Google created and used their scrollbars in apps like Gmail.</p>
+    <p>This experiment is a result of replicating that behavior and style with just CSS. It achieves the following:</p>
+    <ul>
+      <li>Styles the scrollbars using <pre class="inline">-webkit-scrollbar</pre></li>
+      <li>Is simply ignored in browsers that don't support it. (graceful fallback)</li>
+      <li>In some cases, they use a scrollbar that's visible on hover only. This is controlled by a class, which can be applied by javascript.</li>
+    </ul>
+  </div>
+  <h2>Examples</h2>
+  <div class="scroll one">
+    <h4>Simple Scroll</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros lorem, aliquam eget porta in, lobortis tristique sem. In hac habitasse platea dictumst. Quisque aliquet lacinia sapien, nec auctor sem tristique eget. Nullam vehicula feugiat eros vitae tincidunt. Nam vitae odio et est feugiat tempus. Aliquam erat volutpat. Phasellus id metus libero. Duis suscipit, nibh vitae dapibus hendrerit, tortor sem semper ligula, in porta libero nisl vitae ante. Phasellus tristique porta augue et commodo. Pellentesque id tempus odio. Etiam placerat bibendum velit nec viverra. Etiam convallis mauris eu nunc vestibulum pulvinar ut eu ligula.</p>
+
+    <p>In aliquet elit magna, id sollicitudin urna. Fusce hendrerit consectetur ornare. Vestibulum in leo at lectus venenatis rutrum id quis sapien. Etiam viverra orci nec augue tempus consectetur. Suspendisse eu malesuada enim. Phasellus bibendum lorem non tellus sodales quis vestibulum augue interdum. Cras pulvinar ullamcorper blandit. Cras sodales condimentum mi, faucibus porttitor orci mollis ut. Donec dictum nulla et sapien sagittis vestibulum id a elit.<</p>
+    <p>
+    Suspendisse aliquam commodo enim id imperdiet. Nunc ac lectus consectetur nunc accumsan adipiscing ut ut est. Praesent ornare nisl et ante aliquet ultricies. Aliquam erat volutpat. Nulla imperdiet tellus nec ligula vehicula dictum. Vestibulum mollis leo vitae nulla vulputate luctus. Duis nulla justo, iaculis ac pellentesque nec, ullamcorper vehicula enim. Fusce malesuada elit metus, sit amet tincidunt neque.
+    </p><p>
+    Ut commodo varius ultrices. Morbi nec lacus id neque adipiscing placerat vitae ut augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc pharetra justo id tellus sollicitudin molestie. Donec consectetur placerat erat id aliquet. Donec vulputate rutrum bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce mollis blandit lorem feugiat feugiat. In ac arcu eros. Vestibulum vel purus velit. Curabitur egestas ante at elit viverra dignissim. Mauris eget ligula mi, id venenatis justo. Sed tristique, risus pellentesque cursus mattis, massa nisl imperdiet dolor, sed fringilla lacus erat nec mauris. Praesent lobortis risus id eros tincidunt egestas. Etiam tortor magna, iaculis ut adipiscing placerat, viverra ut tellus. Fusce vel lacus non turpis tristique gravida vitae id felis.
+    </p><p>
+    Praesent auctor orci eu ipsum lacinia in pharetra metus feugiat. Pellentesque feugiat elit id lacus laoreet ullamcorper. Fusce id ligula nisl, nec mattis urna. Ut vitae sem quam, ut interdum leo. Aenean elementum tellus id sapien adipiscing vitae venenatis felis vehicula. Nullam turpis nulla, sollicitudin non sodales eget, condimentum rhoncus ligula. Vestibulum sollicitudin enim nec lacus pharetra sagittis. Nullam placerat congue lorem non rutrum. Ut nulla orci, hendrerit a iaculis id, aliquam sed ligula. Sed eget pharetra felis
+  </p>
+  </div>
+  <div class="scroll two">
+    <div>
+      <h4>Scroll with hidden bar</h4>
+      <p>Hover over the block to reveal the scroll.</p>
+      <p>To prevent shifting of elements or accidental hiding of text when the scroll is shown, the contents must be wrapped in an element that can posess a margin.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eros lorem, aliquam eget porta in, lobortis tristique sem. In hac habitasse platea dictumst. Quisque aliquet lacinia sapien, nec auctor sem tristique eget. Nullam vehicula feugiat eros vitae tincidunt. Nam vitae odio et est feugiat tempus. Aliquam erat volutpat. Phasellus id metus libero. Duis suscipit, nibh vitae dapibus hendrerit, tortor sem semper ligula, in porta libero nisl vitae ante. Phasellus tristique porta augue et commodo. Pellentesque id tempus odio. Etiam placerat bibendum velit nec viverra. Etiam convallis mauris eu nunc vestibulum pulvinar ut eu ligula.</p>
+    </div>
+  </div>
+  <h2>The CSS:</h2>
+  <div class="code">
+    <pre>
+        /* A few base styles for presentation */
+        .scroll {
+          display: inline-block;
+          vertical-align: top;
+          overflow: hidden;
+          margin-right:  10px;
+          padding: 6px;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        /* important parts: max-height and overflow-y */
+        .scroll.one {
+          max-height: 300px;
+          width: 500px;
+          overflow-y: scroll;
+        }
+
+        .scroll.two {
+          max-height: 300px;
+          width: 150px;
+        }
+
+        /*
+          To prevent shifting of elements or
+          accidental hiding of text when the scroll
+          is shown, the contents must be wrapped in an
+          element that can posess a margin.
+        */
+        .scroll.two > div {
+          margin-right: 10px;
+        }
+
+        /* change the overflow state on hover */
+        .scroll.two:hover {
+          overflow-y: scroll;
+        }
+
+        .scroll::-webkit-scrollbar {
+          width: 12px;
+        }
+
+        /* track: background of scroll area */
+        .scroll::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .scroll::-webkit-scrollbar-track:hover {
+          background: transparent;
+          border: 1 solid rgba(0, 0, 0, 0.2);
+          border-top: 0px;
+          border-bottom: 0px;
+        }
+
+        /* thumb: the "box" that moves when you scroll */
+        .scroll::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll:hover::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+    </pre>
+  </div>
+
+</body>
+</html>
