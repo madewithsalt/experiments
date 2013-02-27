@@ -1,9 +1,27 @@
+/*
+Credit goes to:
+http://css-tricks.com/custom-scrollbars-in-webkit/
+for helping me understand how to use Shadow DOM elements!
+*/
+
 /* Web page prettification */
+
+html {
+  overflow: auto;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 24px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 20px;
 }
 
 .inline {
@@ -36,6 +54,21 @@ Available states:
 :window-inactive
 
 */
+
+/* clever little fancy body scroll */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #f17d00;
+  border-radius: 8px;
+  -webkit-box-shadow: inset 0 0 6px #aa5800;
+}
+
+body::-webkit-scrollbar-thumb:window-inactive {
+  background-color: #f1ad63;
+}
 
 .scroll {
   display: inline-block;
